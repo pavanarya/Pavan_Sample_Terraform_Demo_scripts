@@ -12,3 +12,7 @@ Terraform Meta Arguments:
 If we create multiple instances using count or foreach, we can access them using index like
  ` resourcetype.<<localname>>[index].output_argument`
   ` resourcetype.<<localname>>[*].output_argument` --  This will output array
+  
+  
+  Also If we want to delete a specific instance...Lets say using count , I created 3 instances. But I want to delete one among them then i can use
+`terraform destroy -target="resourcetype.<<localname>>[index]"`
