@@ -1,0 +1,4 @@
+resource "local_file" "sample3" {
+  content = "This is sample text from sample3 resource in child.tf"
+  filename = "sample3.txt"
+}

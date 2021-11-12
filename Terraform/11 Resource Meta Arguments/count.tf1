@@ -1,0 +1,36 @@
+provider "aws" {
+    region = "us-west-1"
+}
+
+variable "ami" {
+    type = string
+    description = "Instance AMI type"
+    default = "ami-053ac55bdcfe96e85"
+}
+
+variable "instancetype" {
+    type = string
+    description = "Instance type"
+    default = "t2.micro"
+}
+
+resource "aws_instance" "sampleinstance" {
+    ami = var.ami
+    instance_type = var.instancetype
+    count = 2
+    tags = {
+        Name = "${count.index}_pavan_sample"
+    }
+}
+
+output "aws_instance_1_id" {
+    value = aws_instance.sampleinstance[0].id
+}
+
+output "aws_instance_2_id" {
+    value = aws_instance.sampleinstance[1].id
+}
+
+output "aws_instance_ips" {
+    value = aws_instance.sampleinstance[*].public_ip
+}
