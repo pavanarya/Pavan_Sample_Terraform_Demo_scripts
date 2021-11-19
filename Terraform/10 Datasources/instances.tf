@@ -8,6 +8,13 @@ provider "aws" {
 #    }
 # }
 
+# data "aws_subnet" "defaultSubnet" {
+#     filter {
+#       name = "vpc-id"
+#       values = ["vpc-c17bb5a5"]
+#     }
+# }
+
 data "aws_subnet" "subnet" {
     filter {
         name = "tag:Name"
