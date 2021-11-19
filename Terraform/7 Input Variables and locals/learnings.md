@@ -10,6 +10,8 @@ variable "variable_name" {
 }
 ```
 
+https://www.terraform.io/docs/language/expressions/types.html
+
 ************  Providing Input from console  *******************
 
 Now run `terraform init` , `terraform plan` and we can see terraform prompting for `variable_name`, if we dont provide default value. Or else it will take default value
