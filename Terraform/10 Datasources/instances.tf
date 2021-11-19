@@ -2,6 +2,12 @@ provider "aws" {
     region = "us-west-1"
 }
 
+# data "aws_subnet" "defaultSubnet" {
+#    tags = {
+#      "Name" = "Default_SubNet1"
+#    }
+# }
+
 data "aws_subnet" "subnet" {
     filter {
         name = "tag:Name"
